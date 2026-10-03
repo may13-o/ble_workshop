@@ -1,0 +1,27 @@
+menu "Workshop hardware"
+    config WORKSHOP_LED_GPIO
+        int "External LED GPIO (with series resistor)"
+        range 0 30
+        default 7
+        help
+            Check your exact board pinout before connecting the LED.
+
+    config WORKSHOP_LED_ACTIVE_LOW
+        bool "LED is active-low"
+        default n
+
+    config WORKSHOP_I2C_SDA
+        int "I2C SDA GPIO"
+        range 0 30
+        default 4
+
+    config WORKSHOP_I2C_SCL
+        int "I2C SCL GPIO"
+        range 0 30
+        default 5
+
+    config WORKSHOP_BH1750_ADDRESS
+        hex "BH1750 I2C address (0x23 or 0x5c)"
+        range 0x08 0x77
+        default 0x23
+endmenu
